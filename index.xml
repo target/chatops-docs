@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Target &#43; Slack</title>
+    <link>https://pages.git.target.com/target-chatops/chatops-docs/</link>
+    <description>Recent content on Target &#43; Slack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Feb 2019 15:26:25 -0600</lastBuildDate>
+    
+	<atom:link href="https://pages.git.target.com/target-chatops/chatops-docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Terms of Service</title>
+      <link>https://pages.git.target.com/target-chatops/chatops-docs/slack/terms_of_service/</link>
+      <pubDate>Mon, 04 Feb 2019 15:26:25 -0600</pubDate>
+      
+      <guid>https://pages.git.target.com/target-chatops/chatops-docs/slack/terms_of_service/</guid>
+      <description>Slack Terms &amp;amp; Conditions The Terms of Service provides Team Members, Contractors, and Third Parties with Chatops-specific usage responsibilities. It does not replace or supersede any existing Target policies and all users are required to adhere to all Target Policies.
+These terms and conditions apply to all Target Slack users as follows:
+Team Members, Contractors, and Contingent Workers Slack use is governed by the Acceptable Use of Information Resources Policy and the Confidentiality – Company Systems and Property Policy.</description>
+    </item>
+    
+  </channel>
+</rss>
