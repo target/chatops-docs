@@ -1,0 +1,9 @@
+<section class="container centered">
+  <div class="about">
+    {{ with .Site.Params.avatarurl }}
+      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
+    {{ end }}
+    <h1>{{ .Site.Params.author }}</h1>
+    <h2><a href="https://pages.git.target.com/target-chatops/chatops-docs/slack/terms_of_service/">Slack Terms of Service</a></h2>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+######################################################################
+#  _______  ___   _______  _______  ___      ___   __    _  _______  #
+# |       ||   | |       ||       ||   |    |   | |  |  | ||       | #
+# |    _  ||   | |    _  ||    ___||   |    |   | |   |_| ||    ___| #
+# |   |_| ||   | |   |_| ||   |___ |   |    |   | |       ||   |___  #
+# |    ___||   | |    ___||    ___||   |___ |   | |  _    ||    ___| #
+# |   |    |   | |   |    |   |___ |       ||   | | | |   ||   |___  #
+# |___|    |___| |___|    |_______||_______||___| |_|  |__||_______| #
+######################################################################
+pipeline:
+
+  prep:
+    image: boomtownroi/git:latest
+    commands:
+      - rm -rf public
+      - mkdir public
+      - git -C public init
+      - git -C public checkout -b gh-pages
+      - git -C public pull $DRONE_REPO_LINK gh-pages
+
+  build-hugo:
+    group: build
+    image: monachus/hugo:latest
+    commands:
+      - hugo
+
+###########################################################
+#  __   __  _______  _______  _______  _______  ______    #
+# |  |_|  ||   _   ||       ||       ||       ||    _ |   #
+# |       ||  |_|  ||  _____||_     _||    ___||   | ||   #
+# |       ||       || |_____   |   |  |   |___ |   |_||_  #
+# |       ||       ||_____  |  |   |  |    ___||    __  | #
+# | ||_|| ||   _   | _____| |  |   |  |   |___ |   |  | | #
+# |_|   |_||__| |__||_______|  |___|  |_______||___|  |_| #
+###########################################################
+
+  deploy:
+    when:
+      branch: master
+      event: push
+    image: boomtownroi/git:latest
+    commands:
+      - git -C public add --all
+      - git -C public -c user.name='${DRONE_COMMIT_AUTHOR}' -c user.email='${DRONE_COMMIT_AUTHOR_EMAIL}' commit -m "Publishing to gh-pages"
+      - git -C public push $DRONE_REPO_LINK gh-pages
